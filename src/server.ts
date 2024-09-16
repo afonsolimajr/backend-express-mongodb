@@ -1,20 +1,18 @@
-// Import the 'express' module
 import express from 'express';
+import { router } from './routes/Routes';
 
-// Create an Express application
+// cria uma app express
 const app = express();
+//define o uso de json nas rotas
+app.use(express.json())
+//objeto das rotas
+app.use(router)
 
-// Set the port number for the server
+// define o numero da porta de funcionamento da app
 const port = 3000;
 
-// Define a route for the root path ('/')
-app.get('/', (req, res) => {
-  // Send a response to the client
-  res.send('Hello, TypeScript + Node.js + Express!');
-});
-
-// Start the server and listen on the specified port
+// inicia o servidor na porta especificada
 app.listen(port, () => {
   // Log a message when the server is successfully running
-  console.log(`Server is running on port:${port}`);
+  console.log(`Servidor rodando na porta: ${port}`);
 });
