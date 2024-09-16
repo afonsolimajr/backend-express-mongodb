@@ -1,18 +1,22 @@
-# backend-express-mongodb
-### Backend node express mongoDB
+# Backend node express com mongoDB
 
+## como inicializar e configurar um servidor
 
 ### inicializacao do servidor
-npm init -y
+
+```console yarn init -y```
 
 ### instalação do typescript
-yarn add -D typescript
+
+```console yarn add -D typescript```
 
 ### configuração do TS
-yarn tsc --init
+
+```console yarn tsc --init```
 
 ### configuracoes do tsconfig.json
 
+```json
 {
   "compilerOptions": {
     "target": "es2016",
@@ -25,24 +29,30 @@ yarn tsc --init
     "skipLibCheck": true
   }
 }
+```
 
 ### instalação do express e types
 
+```console
 yarn add express
+
 yarn add -D @types/express @types/node
 yarn add -D ts-node ts-node-dev
 yarn add -D nodemon
+```
 
 ### estrutura do projeto
 
-criar pasta src
-criar arquivo src/server.ts
+- criar pasta src
 
-### adiciona script de execucao no package.json
+- criar arquivo src/server.ts
 
+### adicionar script de execucao no package.json
+
+```javascript
 "scripts": {
   "start": "node dist/server.js",
   "build": "tsc",
   "dev": "nodemon src/server.ts"
 },
-
+```
