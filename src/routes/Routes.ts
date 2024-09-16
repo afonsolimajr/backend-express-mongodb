@@ -1,11 +1,9 @@
 import { Request, Response, Router } from "express";
 import { DefaultController } from "../controllers/DefaultController";
+import { tasksRouter } from "./TasksRoutes";
+import { defaultRouter } from "./DefaultRoutes";
 
 export const router = Router();
 
-const defaultController = new DefaultController();
-
-// Define a route for the root path ('/')
-router.get("/", (req: Request, res: Response) => {
-  res.send(defaultController.getHello());
-});
+router.use("/", defaultRouter);
+router.use("/tarefas", tasksRouter);
